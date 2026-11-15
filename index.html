@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <title>NATÁNKEN</title>
+  <meta name="description" content="NATÁNKEN: el parque de juegos de los animales.">
+  <meta name="theme-color" content="#2f6b1f">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="img/icon-192.png">
+  <link rel="apple-touch-icon" href="img/icon-192.png">
+  <link rel="preload" href="fonts/fredoka.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="app">
+    <div id="bg" aria-hidden="true">
+      <div class="sun"></div>
+      <div class="cloud c1"></div><div class="cloud c2"></div><div class="cloud c3"></div>
+      <svg class="bg-hills" viewBox="0 0 400 200" preserveAspectRatio="none">
+        <path d="M0 90 Q60 30 130 80 T260 70 T400 60 V200 H0Z" fill="#a9e07f"/>
+        <path d="M0 130 Q80 70 170 120 T330 110 T400 120 V200 H0Z" fill="#7fcb58"/>
+        <path d="M0 165 Q100 120 200 160 T400 150 V200 H0Z" fill="#5fb23f"/>
+      </svg>
+      <svg class="leaf leaf-l" viewBox="0 0 120 160"><path d="M10 160 Q-10 70 60 6 Q120 60 70 150 Q66 100 58 60 Q52 110 40 156Z" fill="#2f7d22" stroke="#1f4d14" stroke-width="3" stroke-linejoin="round"/><path d="M36 150 Q60 80 104 40 Q84 110 60 152Z" fill="#48a52d" stroke="#1f4d14" stroke-width="3" stroke-linejoin="round"/></svg>
+      <svg class="leaf leaf-r" viewBox="0 0 120 160"><path d="M10 160 Q-10 70 60 6 Q120 60 70 150 Q66 100 58 60 Q52 110 40 156Z" fill="#2f7d22" stroke="#1f4d14" stroke-width="3" stroke-linejoin="round"/><path d="M36 150 Q60 80 104 40 Q84 110 60 152Z" fill="#48a52d" stroke="#1f4d14" stroke-width="3" stroke-linejoin="round"/></svg>
+    </div>
+    <div id="screen"></div>
+    <button id="mute" class="round-btn" aria-label="Sonido">🔊</button>
+  </div>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
