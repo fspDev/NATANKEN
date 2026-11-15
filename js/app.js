@@ -7,8 +7,14 @@ import meerkats from './games/meerkats.js';
 import fruits from './games/fruits.js';
 import kangaroo from './games/kangaroo.js';
 import balloons from './games/balloons.js';
+import tower from './games/tower.js';
+import snake from './games/snake.js';
+import trapeze from './games/trapeze.js';
+import flips from './games/flips.js';
+import balance from './games/balance.js';
+import choir from './games/choir.js';
 
-const GAMES = [memory, race, meerkats, fruits, kangaroo, balloons];
+const GAMES = [memory, race, meerkats, fruits, kangaroo, balloons, tower, snake, trapeze, flips, balance, choir];
 const COLORS = ['#e8472b', '#2e86de', '#27ae60', '#f39a1e'];
 const $screen = document.getElementById('screen');
 const $mute = document.getElementById('mute');
@@ -115,7 +121,7 @@ function playersScreen() {
 }
 
 // ---------- parque ----------
-const MAP_H = 1500;
+const MAP_H = 250 + (GAMES.length - 1) * 205 + 230;
 function park() {
   const pts = GAMES.map((g, i) => ({ x: i % 2 ? 292 : 108, y: 250 + i * 205 }));
   let d = `M200 40 C200 120 ${pts[0].x} 140 ${pts[0].x} ${pts[0].y}`;
@@ -150,6 +156,11 @@ function park() {
       ${deco(full('jirafa'), 44, 395, 70, 'sway')}${deco(full('panda'), 300, 990, 62, 'sway')}${deco(full('tigre'), 250, 1392, 62, 'sway')}
       ${deco(balloonsSvg, 180, 330, 44, 'float')}${deco(balloonsSvg, 180, 960, 44, 'float')}
       ${deco(flowers('#ff8fc7'), 190, 200, 60)}${deco(flowers('#fff'), 30, 520, 60)}${deco(flowers('#ff5a5f'), 200, 770, 60)}${deco(flowers('#b06cf0'), 150, 1130, 60)}${deco(flowers('#ff8fc7'), 20, 1400, 60)}
+      ${deco(tree, 300, 1600, 86)}${deco(tree, 8, 1790, 84)}${deco(tree, 316, 2030, 84)}${deco(tree, 6, 2230, 88)}${deco(tree, 306, 2440, 84)}${deco(tree, 160, 2610, 80)}
+      ${deco(wheel, 20, 1560, 130, 'wheel')}${deco(pond, 215, 1870, 170)}${deco(head('coco'), 268, 1862, 62, 'bob')}
+      ${deco(full('cebra'), 44, 2030, 66, 'sway')}${deco(full('elefante'), 296, 2230, 66, 'sway')}${deco(full('tucan'), 60, 2440, 60, 'sway')}${deco(full('hipo'), 250, 2620, 64, 'sway')}
+      ${deco(balloonsSvg, 180, 1560, 44, 'float')}${deco(balloonsSvg, 180, 2190, 44, 'float')}
+      ${deco(flowers('#fff'), 200, 1750, 60)}${deco(flowers('#ff5a5f'), 210, 1990, 60)}${deco(flowers('#b06cf0'), 190, 2380, 60)}${deco(flowers('#ff8fc7'), 30, 2640, 60)}
       ${GAMES.map((g, i) => {
         const s = store.best[g.id] || 0;
         return `<button class="booth" data-g="${i}" style="left:${pts[i].x / 4}%;top:${pts[i].y / MAP_H * 100}%;--d:${i * 90}ms">

@@ -141,3 +141,34 @@ export function hills(g, W, baseY, amp, color, offset, period = 260, H = 2000) {
   }
   g.lineTo(W + 20, H); g.closePath(); g.fill();
 }
+
+/** Fondo de carpa de circo con franjas, reflectores y público. */
+export function circus(g, W, H, offset, now, u, floorY = H) {
+  const sw = 70 * u, off = ((offset % (sw * 2)) + sw * 2) % (sw * 2);
+  g.fillStyle = '#7a1f3d'; g.fillRect(0, 0, W, H);
+  g.fillStyle = '#93284a';
+  for (let x = -off; x < W + sw; x += sw * 2) g.fillRect(x, 0, sw, H);
+  const shade = g.createLinearGradient(0, 0, 0, H);
+  shade.addColorStop(0, 'rgba(20,0,30,.55)'); shade.addColorStop(0.5, 'rgba(20,0,30,0)'); shade.addColorStop(1, 'rgba(20,0,30,.45)');
+  g.fillStyle = shade; g.fillRect(0, 0, W, H);
+  for (let i = 0; i < 2; i++) {
+    const cx = W * (0.25 + i * 0.5) + Math.sin(now * 0.7 + i * 2) * W * 0.18;
+    const cone = g.createLinearGradient(0, 0, 0, H * 0.9);
+    cone.addColorStop(0, 'rgba(255,240,170,.28)'); cone.addColorStop(1, 'rgba(255,240,170,0)');
+    g.fillStyle = cone;
+    g.beginPath(); g.moveTo(W * (0.1 + i * 0.8), 0); g.lineTo(cx - 90 * u, H * 0.9); g.lineTo(cx + 90 * u, H * 0.9); g.closePath(); g.fill();
+  }
+  // público
+  const cols = ['#ffd93b', '#ff8fc7', '#7ad7ff', '#3ecf6e', '#ff9f1c', '#b06cf0'];
+  for (let row = 0; row < 3; row++) {
+    const y = floorY - (2 - row) * 20 * u, r = 13 * u, gap = 30 * u;
+    const o = ((offset * (0.5 + row * 0.2)) % gap + gap) % gap;
+    for (let x = -o - (row % 2) * gap / 2, i = 0; x < W + gap; x += gap, i++) {
+      g.fillStyle = cols[(i + row * 2) % cols.length];
+      g.globalAlpha = 0.55 + row * 0.15;
+      g.beginPath(); g.arc(x, y - Math.abs(Math.sin(now * 5 + i * 1.7 + row)) * 4 * u, r, 0, 7); g.fill();
+    }
+  }
+  g.globalAlpha = 1;
+  g.fillStyle = '#4a1226'; g.fillRect(0, floorY + 8 * u, W, H - floorY);
+}

@@ -11,6 +11,12 @@ El parque de juegos de los animales: mini juegos infantiles para 1 a 4 jugadores
 - **Lluvia de Frutas** – mové al mono para atrapar frutas.
 - **Canguro Saltarín** – saltá obstáculos y juntá frutas.
 - **Fiesta de Globos** – reventá globos.
+- **Torre de Bloques** – apilá bloques lo más alto posible.
+- **Viborita Glotona** – comé frutas sin morderte la cola.
+- **Mono Trapecista** – soltate a tiempo para volar al próximo trapecio.
+- **Saltos Mortales** – girá en el aire y caé de pie en el trampolín.
+- **Panda Equilibrista** – mantené el equilibrio en la cuerda floja.
+- **Coro Animal** – repetí la secuencia de animales.
 
 ## Instalar en Android (funciona sin internet)
 1. Abrí el link en Chrome.

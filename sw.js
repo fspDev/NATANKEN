@@ -8,6 +8,8 @@ const ASSETS = [
   'js/app.js', 'js/art.js', 'js/audio.js', 'js/kit.js',
   'js/games/memory.js', 'js/games/race.js', 'js/games/meerkats.js',
   'js/games/fruits.js', 'js/games/kangaroo.js', 'js/games/balloons.js',
+  'js/games/tower.js', 'js/games/snake.js', 'js/games/trapeze.js',
+  'js/games/flips.js', 'js/games/balance.js', 'js/games/choir.js',
 ];
 
 self.addEventListener('install', e => {

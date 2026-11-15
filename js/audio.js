@@ -71,6 +71,7 @@ export const sfx = {
   go: () => { tone(midi(84), 0.4, { type: 'triangle', vol: 0.28 }); tone(midi(79), 0.4, { type: 'triangle', vol: 0.16 }); },
   bonk: () => { tone(160, 0.12, { type: 'square', to: 80, vol: 0.14 }); noise(0.06, { vol: 0.3, freq: 900 }); },
   roar: () => { tone(120, 0.5, { type: 'sawtooth', to: 70, vol: 0.2 }); noise(0.45, { vol: 0.14, freq: 260 }); },
+  note: n => { tone(midi(n), 0.42, { type: 'triangle', vol: 0.3 }); tone(midi(n + 12), 0.3, { type: 'sine', vol: 0.1 }); },
   win: () => [72, 76, 79, 84, 79, 84, 88].forEach((n, i) =>
     tone(midi(n), i === 6 ? 0.6 : 0.16, { type: 'triangle', vol: 0.24, when: i * 0.12 })),
   star: (i = 0) => tone(midi(84 + i * 4), 0.3, { type: 'triangle', vol: 0.24 }),

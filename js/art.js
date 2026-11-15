@@ -157,6 +157,17 @@ export const ANIMALS = {
   },
 };
 
+ANIMALS.vibora = {
+  name: 'Víbora', color: '#4fbf5a', belly: '#b9ec8f',
+  head: () =>
+    `<path d="M60 92 v14 l-7 9 M60 106 l7 9" fill="none" stroke="#e8472b" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>` +
+    `<ellipse cx="60" cy="60" rx="37" ry="34" fill="#4fbf5a" ${st()}/>` +
+    `<ellipse cx="60" cy="78" rx="25" ry="13" fill="#b9ec8f"/>` +
+    `<circle cx="38" cy="38" r="5" fill="#379a44"/><circle cx="82" cy="38" r="5" fill="#379a44"/><circle cx="60" cy="31" r="4" fill="#ffd93b"/>` +
+    `<ellipse cx="55" cy="70" rx="1.6" ry="2.2" fill="#2a1a10"/><ellipse cx="65" cy="70" rx="1.6" ry="2.2" fill="#2a1a10"/>` +
+    eyes(54, 15, 7) + blush(70, 26, 5) + smile(80, 8),
+};
+
 export const ANIMAL_IDS = Object.keys(ANIMALS);
 export const AVATAR_IDS = ['leon', 'jirafa', 'elefante', 'mono', 'cebra', 'hipo', 'coco', 'tucan', 'panda', 'tigre'];
 
